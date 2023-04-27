@@ -1,0 +1,189 @@
+:root {
+  --white: #FFF;
+  --black: #000;
+  --softRed: #ec775f;
+  --softRedHover: #ec8d7a;
+  --cyan: #76b5bc;
+  --cyanHover: #86bac0;
+  --darkBrown: #382314;
+  --mediumBrown: #93867b;
+  --cream: #f8e9dd;
+  --paleOrange: #fffaf5;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  font-size: 18px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 20px auto;
+}
+
+
+.balance {
+  background-color: var(--softRed);
+  border-radius: 20px;
+  color: var(--cream);
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 40px
+}
+
+.balance p {
+  margin-bottom: 5px;
+}
+
+.balance span {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.spending {
+  background: var(--paleOrange);
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 25px 40px
+}
+
+.spending p {
+  font-weight: 700;
+  font-size: 29px;
+  color: var(--darkBrown);
+  margin-bottom: 15px;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  place-items: self-end;
+  gap: 5px;
+  height: 110px;
+}
+
+.days span {
+  color: var(--mediumBrown);
+  font-size: 14px;
+  text-align: center;
+}
+
+.day-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltip-box {
+  color: var(--cream);
+  background-color: var(--darkBrown);
+  font-size: 12px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  z-index: 9;
+  left: 0;
+  bottom: 50px;
+}
+
+.chart-bar {
+  width: 40px;
+  background: var(--softRed);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.chart-bar[title]:hover::after {
+  position: absolute;
+  color: var(--cream);
+  background-color: var(--darkBrown);
+  font-size: 12px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 6px;
+  content: attr(title);
+  top: -40px;
+}
+
+.chart-bar:hover {
+  background: var(--softRedHover);
+}
+
+.blue-background {
+  background: var(--cyan);
+}
+
+.blue-background:hover {
+  background: var(--cyanHover);
+}
+
+
+.total {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-month p {
+  font-weight: 400;
+  color: var(--mediumBrown);
+  font-size: 16px;
+  margin: 0;
+}
+
+.total-month span {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--darkBrown);
+}
+
+.total-balance {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.total-balance span {
+  color: var(--mediumBrown);
+  font-size: 16px;
+}
+
+.porcentage {
+  color: var(--darkBrown) !important;
+  font-weight: 700;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--paleOrange);
+  width: 100%;
+  padding: 10px 0;
+}
+
+footer p {
+  text-align: right;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--softRed);
+}
+
+@media (max-width: 400px) {
+  .days {
+    gap: 2px;
+  }
+}
