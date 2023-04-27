@@ -5,7 +5,7 @@ export const SpendingComponent = () => {
 	const [days, setDays] = useState([]);
 
 	const getDataByDay = async() => {
-		const result = await fetch('../../data.json');
+		const result = await fetch('./data/data.json');
 		const data = await result.json();
 		setDays(data);
 	};
